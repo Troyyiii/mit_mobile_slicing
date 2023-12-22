@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mit_slicing/food_card.dart';
 
 class RestaurantDetail extends StatelessWidget {
   const RestaurantDetail({super.key});
@@ -26,11 +27,11 @@ class RestaurantDetail extends StatelessWidget {
                   color: Color(0xff0e1110),
                 ),
                 height: MediaQuery.of(context).size.height / 1.5,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    SingleChildScrollView(
-                      child: Padding(
+                child: SingleChildScrollView(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Padding(
                         padding: const EdgeInsets.fromLTRB(30, 45, 30, 20),
                         child: Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
@@ -87,77 +88,117 @@ class RestaurantDetail extends StatelessWidget {
                           ],
                         ),
                       ),
-                    ),
-                    const Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 33),
-                      child: Row(
-                        children: [
-                          Text(
-                            "Wijie Bar and Resto",
-                            style: TextStyle(
-                              fontSize: 25,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
+                      const Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 33),
+                        child: Row(
+                          children: [
+                            Text(
+                              "Wijie Bar and Resto",
+                              style: TextStyle(
+                                fontSize: 25,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
-                    ),
-                    const Padding(
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 30, vertical: 20),
-                      child: Row(
-                        children: [
-                          Icon(
-                            Icons.location_on_outlined,
-                            size: 20,
-                            color: Color(0xff53E88B),
-                          ),
-                          SizedBox(width: 5),
-                          Text(
-                            "19 Km",
-                            style: TextStyle(
-                              fontSize: 14,
-                              color: Color(0xff565857),
+                      const Padding(
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+                        child: Row(
+                          children: [
+                            Icon(
+                              Icons.location_on_outlined,
+                              size: 20,
+                              color: Color(0xff53E88B),
                             ),
-                          ),
-                          SizedBox(width: 20),
-                          Icon(
-                            Icons.star_half,
-                            size: 20,
-                            color: Color(0xff53E88B),
-                          ),
-                          SizedBox(width: 5),
-                          Text(
-                            "19 Km",
-                            style: TextStyle(
-                              fontSize: 14,
-                              color: Color(0xff565857),
+                            SizedBox(width: 5),
+                            Text(
+                              "19 Km",
+                              style: TextStyle(
+                                fontSize: 14,
+                                color: Color(0xff565857),
+                              ),
                             ),
-                          ),
-                        ],
+                            SizedBox(width: 20),
+                            Icon(
+                              Icons.star_half,
+                              size: 20,
+                              color: Color(0xff53E88B),
+                            ),
+                            SizedBox(width: 5),
+                            Text(
+                              "19 Km",
+                              style: TextStyle(
+                                fontSize: 14,
+                                color: Color(0xff565857),
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
-                    ),
-                    const Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 30),
-                      child: Column(
-                        children: [
-                          Text(
-                            "Most whole Alaskan Red King Crabs get broken down into legs, claws, and lump meat. We offer all of these options as well in our online shop, but there is nothing like getting the whole",
-                            style: TextStyle(
-                              fontSize: 12,
-                              color: Colors.white,
+                      const Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 30),
+                        child: Column(
+                          children: [
+                            Text(
+                              "While our online shop offers an array of Alaskan Red King Crab options such as legs, claws, and lump meat, there's an unparalleled delight in choosing the whole crab itself. Opting for the complete Alaskan Red King Crab isn't just about a meal; it's an immersive experience. From the anticipation of cracking open the shell to reveal its succulent, tender meat to the vibrant hues and intricate flavors hidden within, each part of the whole crab presents a sensory journey that celebrates the essence of seafood indulgence.",
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: Colors.white,
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 30, vertical: 20),
-                      child: Row(),
-                    )
-                  ],
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 30, vertical: 20),
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            const Text(
+                              "Popular Menu",
+                              style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                            InkWell(
+                              onTap: () {},
+                              highlightColor: Colors.transparent,
+                              splashColor: Colors.transparent,
+                              child: const Text(
+                                "View All",
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w500,
+                                  color: Color(0xffFF8E4C),
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                      const Padding(
+                        padding: EdgeInsets.only(left: 20, bottom: 30),
+                        child: SingleChildScrollView(
+                          scrollDirection: Axis.horizontal,
+                          child: Row(
+                            children: [
+                              FoodCard(),
+                              FoodCard(),
+                              FoodCard(),
+                              FoodCard(),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
